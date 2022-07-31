@@ -1,18 +1,11 @@
-# Salesforce DX Project: Next Steps
+## Pivotal Tracker to Salesforce Integration
+Enclosed you will find a very MVP version of an Apex REST class that will take in the webhook from Pivotal Tracker that they allow with activity updates.
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+## Whats Inside
+As part of this package you will have in the manifest:
+- Project and Project Item objects with relevant Pivotal Tracker fields mapped to them
+- Apex REST class setup via an Experience Site to work as a Public API (for demonstration purposes only, for Security minded approaches see some of the non-boiler plate MVP similar packages.  This is just to prove a concept and teach about REST interactions with Salesforce.com
+- Permission Set and Profile for the Guest User (Apex Class access to guest user = Public API)
 
-## How Do You Plan to Deploy Your Changes?
-
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
-
-## Configure Your Salesforce DX Project
-
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
-
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+## Whats Next 
+If you have any questions feel free to reach out at https://sfdcboss.com/salesforce-pivotal-tracker/ or on the Contact Page with any questions.  If you are interested in a Salesforce Pivotal Tracker integration with a few more bells and whistles, that is also available on my site so come check it out.  I'd love to talk through any questions around this so just ask!
