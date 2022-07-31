@@ -31,10 +31,11 @@
  */
 global without sharing class PivotalTrackerEndpoint{
 	public static Map<String, String> updateMap = new Map<String, String>(); // a place to store some key/value pairs of updates from the process
-	public enum PivotalTracker_kind{
+	public enum PivotalTracker_kind{ // these are the types of updates that PT could potentially send as detailed in their rest api.  only story_update_activity is in scope for this
 		pull_request_create_activity, 
 		branch_create_activity, 
-		story_create_activity
+		story_create_activity,
+		story_update_activity
 	}
 
 	/**
@@ -130,15 +131,17 @@ global without sharing class PivotalTrackerEndpoint{
 			projectItems.add(new Project_Item__c(Data__c = String.valueOf(pl), Project__c = projectId, pt_id__c = theStoryId, pt_url__c = pr.url != null ? String.valueOf(pr.url) : '', pt_story_type__c = pr.story_type != null ? String.valueOf(pr.story_type) : '', pt_kind__c = pr.kind != null ? String.valueOf(pr.kind) : '', pt_name__c = pr.name != null ? String.valueOf(pr.name) : '', Id = storyIdToSFId.containsKey(theStoryId) ? theStoryId : null));
 
 		}
+		
+		upsert projectItems;
 
 		return projectItems;
 	}
 
-	public static Map<Id, Project__c> doProjectsExistInSF(Set<String> pivotalTrackerProjectIds, DateTime timestamp){
-		Map<Id, Project__c> proj = new Map<Id, Project__c>([SELECT Id
+	public static Map<String, Project__c> doProjectsExistInSF(Set<String> pivotalTrackerProjectIds, DateTime timestamp){
+		Map<String, Project__c> proj = new Map<String, Project__c>([SELECT Id,Project_Id__c,Last_Project_Update__c
 		                                                    FROM Project__c
 		                                                    WHERE Project_Id__c IN:pivotalTrackerProjectIds]);
-		Map<Id, Project__c> projUpsert = new Map<Id, Project__c>();
+		Map<String, Project__c> projUpsert = new Map<String, Project__c>();
 		for (String s : pivotalTrackerProjectIds){
 			Boolean keepSearching = true;
 			for (Project__c p : proj.values()){
