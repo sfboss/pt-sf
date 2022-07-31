@@ -10,3 +10,4 @@ package.xml
 
 # LWC Jest
 **/__tests__/**
+pt-sf/main/default/profiles/*
