@@ -8,4 +8,4 @@ As part of this package you will have in the manifest:
 - Permission Set and Profile for the Guest User (Apex Class access to guest user = Public API)
 
 ## Whats Next 
-If you have any questions feel free to reach out at https://sfdcboss.com/salesforce-and-pivotal-tracker-integration/ or on the Contact Page with any questions.  If you are interested in a Salesforce Pivotal Tracker integration with a few more bells and whistles, that is also available on my site so come check it out.  I'd love to talk through any questions around this so just ask!
+If you have any questions feel free to reach out at https://sfdcboss.com/salesforce-pivotal-tracker-integration/ or on the Contact Page with any questions.  If you are interested in a Salesforce Pivotal Tracker integration with a few more bells and whistles, that is also available on my site so come check it out.  I'd love to talk through any questions around this so just ask!
